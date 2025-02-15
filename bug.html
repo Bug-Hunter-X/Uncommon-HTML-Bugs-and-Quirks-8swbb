@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv"></div>
+
+  <script>
+    //Attempting to access a non-existent attribute
+    let x = document.getElementById("myDiv").getAttribute("nonExistentAttribute");
+    console.log(x); // Output: null. This won't throw an error, but might lead to unexpected behavior.
+
+    //Using a tag incorrectly
+    //The next line is perfectly valid HTML5 and will not throw an error, but may not do what the coder intended.
+    document.write('<img src="image.jpg" alt="Image not found" width=100 height=100>');
+
+    //Incorrect use of event handlers
+    document.getElementById("myDiv").onclick = myFunction(); //This will execute the function immediately instead of assigning it as an event handler.
+    //Instead it should be:
+    //document.getElementById("myDiv").onclick = myFunction; 
+
+    function myFunction() {
+      alert("Event handler triggered!");
+    }
+  </script>
+</body>
+</html>

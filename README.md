@@ -1,0 +1,1 @@
+This repository demonstrates some uncommon HTML errors that don't always throw explicit errors but lead to unexpected behavior.  These examples highlight the importance of carefully checking attribute usage, understanding tag semantics, and properly using event handlers. The `bug.html` file showcases these errors, and `bugSolution.html` provides corrected versions.

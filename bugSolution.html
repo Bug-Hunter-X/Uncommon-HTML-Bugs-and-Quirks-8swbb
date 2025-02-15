@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Corrected HTML</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv"></div>
+
+  <script>
+    // Accessing attributes safely
+    let divElement = document.getElementById("myDiv");
+    let attributeValue = divElement ? divElement.getAttribute("data-attribute") : null; //safe check for element existence
+    console.log(attributeValue); // Output: null or the attribute value
+
+    //Using a tag correctly with error handling
+    let img = document.createElement('img');
+    img.src = 'image.jpg';
+    img.alt = 'Image not found';
+    img.width = 100;
+    img.height = 100;
+    img.onerror = () => {
+      console.error('Image load failed');
+      img.alt = 'Image load failed';
+    };
+    document.body.appendChild(img);
+
+    //Correct event handler assignment
+    document.getElementById("myDiv").onclick = myFunction;
+
+    function myFunction() {
+      alert("Event handler triggered!");
+    }
+  </script>
+</body>
+</html>
